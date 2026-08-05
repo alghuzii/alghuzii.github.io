@@ -1,4 +1,1233 @@
-<!DOCTYPE html>
+<!DOCTYPE html><!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>مجموعة الغزي لزجاج السيارات | ALGHUZI AUTO GLASS GROUP</title>
+<meta name="description" content="مجموعة الغزي لزجاج السيارات — أكثر من ٤٠ عاماً من الخبرة، موزع معتمد لأكبر مصانع زجاج السيارات في الشرق الأوسط. خدمات تجزئة وجملة وتركيب وعقود صيانة للشركات في الإمارات والسعودية والبحرين.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='48' fill='%230B2545'/%3E%3Ccircle cx='50' cy='50' r='40' fill='none' stroke='%23C9A227' stroke-width='2'/%3E%3Ctext x='50' y='58' font-size='30' fill='%23fff' text-anchor='middle' font-family='sans-serif' font-weight='bold'%3EAG%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&family=Barlow+Condensed:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#0A1E38;
+    --navy-dark:#0D1B26;
+    --footer-bg:#071320;
+    --charcoal:#1C2832;
+    --gold:#00B8CC;      /* mapped to brand accent: Precision Cyan */
+    --gold-soft:#4DD6E6; /* lighter cyan for dark backgrounds */
+    --bg:#F4F8FB;
+    --card:#ffffff;
+    --line:#D0D8E4;
+    --muted:#5C7080;     /* darkened from brand Steel #8FA6B2 for AA text contrast */
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  section[id], #waForm{scroll-margin-top:110px;}
+  body{
+    font-family:'Tajawal', sans-serif;
+    background:var(--bg);
+    color:var(--navy-dark);
+    line-height:1.75;
+    overflow-x:hidden;
+  }
+  .en-display{font-family:'Barlow Condensed', sans-serif; text-transform:uppercase;}
+  a{text-decoration:none; color:inherit;}
+  img{max-width:100%; display:block;}
+  ul{list-style:none;}
+  button{font-family:inherit; cursor:pointer; border:none;}
+  input, select, textarea{font-family:inherit;}
+
+  /* ===== Seal / logo badges (real brand PNG logos) ===== */
+  .seal{
+    width:46px; height:46px; border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    background:#fff; box-shadow:0 0 0 1px rgba(10,30,56,0.1);
+    flex-shrink:0; overflow:hidden; padding:5px;
+  }
+  .seal img{width:100%; height:100%; object-fit:contain;}
+
+  /* ===== Top bar ===== */
+  .topbar{
+    position:sticky; top:0; z-index:60;
+    background:rgba(255,255,255,0.94);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  .topbar-inner{
+    max-width:1180px; margin:0 auto;
+    display:flex; align-items:center; justify-content:space-between;
+    padding:10px 20px;
+    gap:14px;
+  }
+  .brand{display:flex; align-items:center; gap:12px;}
+  .brand-text{display:flex; flex-direction:column; line-height:1.3;}
+  .brand-text b{font-size:15px; font-weight:800; color:var(--navy);}
+  .brand-text span{font-size:10.5px; color:var(--muted); letter-spacing:1px;}
+  .nav-links{display:flex; gap:20px; font-size:14px; font-weight:500;}
+  .nav-links a{opacity:0.78; transition:opacity .2s, color .2s;}
+  .nav-links a:hover{opacity:1; color:var(--gold);}
+  .topbar-actions{display:flex; align-items:center; gap:10px;}
+  @media (max-width:940px){ .nav-links{display:none;} }
+
+  /* ===== Language switch ===== */
+  .lang-switch{
+    display:flex; align-items:center; border:1.5px solid var(--line); border-radius:4px; overflow:hidden;
+  }
+  .lang-btn{
+    background:#fff; color:var(--muted); font-size:12.5px; font-weight:700;
+    padding:8px 12px; transition:background .2s, color .2s;
+  }
+  .lang-btn.active{background:var(--navy); color:#fff;}
+  .mobile-menu .lang-switch{justify-content:center;}
+
+  /* ===== Buttons ===== */
+  .btn{
+    display:inline-flex; align-items:center; gap:8px;
+    padding:12px 24px; border-radius:4px; font-weight:700; font-size:14.5px;
+    transition:transform .15s ease, box-shadow .15s ease, background .2s;
+    white-space:nowrap;
+  }
+  .btn:hover{transform:translateY(-2px);}
+  .btn svg{width:18px; height:18px; flex-shrink:0;}
+  .btn-primary{background:var(--gold); color:var(--navy);}
+  .btn-primary:hover{box-shadow:0 8px 20px rgba(0,184,204,0.35);}
+  .btn-outline{border:1.5px solid var(--navy); color:var(--navy);}
+  .btn-outline-light{border:1.5px solid rgba(255,255,255,0.55); color:#fff;}
+  .btn-outline-light:hover{background:rgba(255,255,255,0.1);}
+  .btn-wa{background:#25D366; color:#fff;}
+  .btn-wa:hover{box-shadow:0 8px 20px rgba(37,211,102,0.35);}
+  .btn-sm{padding:9px 16px; font-size:13px; width:100%; justify-content:center;}
+
+  /* ===== Top accent line (brand rule: 3-4px cyan line above navy header) ===== */
+  .accent-line{height:4px; background:var(--gold); width:100%;}
+
+  /* ===== Hero ===== */
+  .hero{
+    background:linear-gradient(160deg, var(--navy) 0%, var(--navy-dark) 100%);
+    color:#fff; position:relative; overflow:hidden;
+  }
+  .hero::after{
+    content:''; position:absolute; inset:0;
+    background:
+      radial-gradient(circle at 85% 20%, rgba(0,184,204,0.16), transparent 45%),
+      radial-gradient(circle at 10% 90%, rgba(0,184,204,0.10), transparent 40%);
+    pointer-events:none;
+  }
+  .hero-inner{
+    max-width:1180px; margin:0 auto; padding:80px 20px 60px;
+    text-align:center; position:relative; z-index:1;
+  }
+  .hero-logos{
+    display:flex; flex-direction:column; align-items:center; gap:16px; margin-bottom:28px;
+  }
+  .hero-logo-group{width:150px; height:150px; flex-shrink:0;}
+  .hero-logo-group img{width:100%; height:100%; object-fit:contain;}
+  .hero-logo-sub-row{display:flex; align-items:center; gap:32px;}
+  .hero-logo-sub{width:52px; height:52px; flex-shrink:0;}
+  .hero-logo-sub img{width:100%; height:100%; object-fit:contain;}
+  @media (max-width:600px){
+    .hero-logo-group{width:110px; height:110px;}
+    .hero-logo-sub{width:42px; height:42px;}
+    .hero-logo-sub-row{gap:22px;}
+  }
+  .hero .eyebrow{
+    display:inline-block; color:var(--gold-soft); font-weight:700; font-size:13px;
+    letter-spacing:2px; border:1px solid rgba(0,184,204,0.4); border-radius:4px;
+    padding:6px 18px; margin-bottom:22px;
+  }
+  .hero h1{
+    font-size:clamp(28px,5vw,48px); font-weight:900; letter-spacing:0.5px; margin-bottom:10px;
+  }
+  .hero h1 small{display:block; font-size:0.42em; font-weight:500; color:#cdd6e4; letter-spacing:3px; margin-top:10px;}
+  .hero p.lead{
+    color:#c7d0de; font-size:16.5px; max-width:640px; margin:20px auto 30px;
+  }
+  .hero-badges{
+    display:flex; gap:10px; justify-content:center; flex-wrap:wrap; margin-bottom:34px;
+  }
+  .badge{
+    background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.18);
+    padding:9px 18px; border-radius:4px; font-size:13px; font-weight:500; color:#e7ebf2;
+  }
+  .cta-row{display:flex; gap:14px; justify-content:center; flex-wrap:wrap;}
+
+  /* ===== Section heading ===== */
+  .section{max-width:1180px; margin:0 auto; padding:70px 20px;}
+  .section-head{text-align:center; margin-bottom:42px;}
+  .section-head p.eyebrow{color:var(--gold); font-weight:800; font-size:12.5px; letter-spacing:2.5px; margin-bottom:10px; text-transform:uppercase;}
+  .section-head h2{font-size:clamp(22px,4vw,34px); font-weight:800; color:var(--navy);}
+  .section-head p.sub{color:var(--muted); font-size:15px; max-width:560px; margin:12px auto 0;}
+  .section-dark{background:var(--navy); color:#fff;}
+  .section-dark .section-head p.eyebrow{color:var(--gold-soft);}
+  .section-dark .section-head h2{color:#fff;}
+  .section-dark .section-head p.sub{color:#c7d0de;}
+
+  /* ===== Trust bar ===== */
+  .trust-bar{
+    background:#fff; border-bottom:1px solid var(--line); border-top:1px solid var(--line);
+  }
+  .trust-inner{
+    max-width:1180px; margin:0 auto; padding:26px 20px;
+    display:grid; grid-template-columns:repeat(4,1fr); gap:18px;
+    text-align:center;
+  }
+  .trust-item b{display:block; font-size:19px; color:var(--navy); font-weight:800;}
+  .trust-item span{font-size:12.5px; color:var(--muted);}
+  @media (max-width:760px){ .trust-inner{grid-template-columns:repeat(2,1fr);} }
+
+  /* ===== Companies ===== */
+  .companies-grid{
+    display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:24px;
+  }
+  .company-card{
+    background:var(--card); border:1px solid var(--line); border-top:3px solid transparent; border-radius:6px;
+    padding:32px 26px; text-align:center; transition:box-shadow .2s, transform .2s, border-color .2s;
+  }
+  .company-card:hover{box-shadow:0 16px 34px rgba(10,30,56,0.1); transform:translateY(-4px); border-top-color:var(--gold);}
+  .company-card .seal{width:84px; height:84px; font-size:16px; margin:0 auto 18px; padding:8px;}
+  .company-card h3{font-size:17px; font-weight:800; color:var(--navy); margin-bottom:4px;}
+  .company-card .country{font-size:12.5px; color:#0e8f9c; font-weight:700; letter-spacing:1px; margin-bottom:12px;}
+  .company-card p{font-size:13.5px; color:var(--muted);}
+  .company-card .legacy-tag{
+    display:inline-block; margin-top:14px; font-size:11.5px; color:var(--muted);
+    border:1px dashed var(--line); border-radius:4px; padding:4px 12px;
+  }
+
+
+  /* ===== Services & Products ===== */
+  .cards-grid{
+    display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:22px;
+  }
+  .feature-card{
+    background:var(--card); border:1px solid var(--line); border-radius:6px;
+    padding:26px 22px; border-right:3px solid transparent; transition:border-color .2s;
+  }
+  .feature-card:hover{ border-right-color:var(--gold); }
+  .feature-card .icon-circle{
+    width:48px; height:48px; border-radius:4px; background:var(--bg);
+    display:flex; align-items:center; justify-content:center; margin-bottom:16px;
+    border:1px solid var(--line);
+  }
+  .feature-card .icon-circle svg{width:24px; height:24px; color:var(--navy);}
+  .feature-card h3{font-size:16px; font-weight:800; color:var(--navy); margin-bottom:8px;}
+  .feature-card p{font-size:13.5px; color:var(--muted);}
+  .note-box{
+    margin-top:30px; background:var(--bg); border:1px solid var(--line); border-radius:6px;
+    padding:18px 22px; font-size:13.5px; color:var(--muted); text-align:center;
+  }
+  .note-box b{color:var(--navy);}
+
+  /* ===== Warranty ===== */
+  .warranty-grid{
+    display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:24px;
+    max-width:760px; margin:0 auto;
+  }
+  .warranty-card{
+    background:var(--card); border:1px solid var(--line); border-radius:6px;
+    padding:36px 28px; text-align:center;
+  }
+  .warranty-icon{
+    width:64px; height:64px; border-radius:50%; margin:0 auto 14px;
+    background:linear-gradient(135deg, var(--gold-soft), var(--gold));
+    display:flex; align-items:center; justify-content:center;
+  }
+  .warranty-icon svg{width:30px; height:30px; color:var(--navy-dark);}
+  .warranty-years{
+    display:block; font-size:13px; font-weight:800; color:var(--gold); letter-spacing:1px; margin-bottom:6px;
+  }
+  .warranty-card h3{font-size:18px; font-weight:800; color:var(--navy); margin-bottom:10px;}
+  .warranty-card p{font-size:14px; color:var(--muted);}
+
+  /* ===== B2B ===== */
+  .b2b-grid{display:grid; grid-template-columns:1.1fr 0.9fr; gap:46px; align-items:center;}
+  .b2b-text p{color:#c7d0de; font-size:15px; margin-bottom:14px;}
+  .b2b-list{display:flex; flex-direction:column; gap:12px; margin-top:20px;}
+  .b2b-list li{display:flex; gap:10px; align-items:flex-start; font-size:14.5px; color:#e7ebf2;}
+  .b2b-list svg{flex-shrink:0; width:18px; height:18px; margin-top:2px; color:var(--gold-soft);}
+  .b2b-clients{
+    background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.15);
+    border-radius:6px; padding:26px; text-align:center;
+  }
+  .b2b-clients p.label{font-size:12px; letter-spacing:2px; color:var(--gold-soft); font-weight:700; margin-bottom:16px;}
+  .client-logos{display:flex; flex-wrap:wrap; justify-content:center; gap:12px;}
+  .client-logo{
+    background:#fff; border-radius:8px; padding:10px 16px;
+    display:flex; align-items:center; justify-content:center;
+    height:64px;
+  }
+  .client-logo img{max-height:100%; max-width:120px; object-fit:contain;}
+  @media (max-width:800px){ .b2b-grid{grid-template-columns:1fr;} }
+
+  /* ===== Branches ===== */
+  .branches-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:22px;}
+  .branch-card{
+    background:var(--card); border:1px solid var(--line); border-radius:6px; overflow:hidden;
+    display:flex; flex-direction:column;
+  }
+  .branch-top{
+    background:linear-gradient(135deg, var(--navy), var(--navy-dark));
+    color:#fff; padding:20px 22px; display:flex; align-items:center; gap:12px;
+  }
+  .branch-top .icon-circle{
+    width:40px; height:40px; border-radius:50%; background:rgba(255,255,255,0.1);
+    display:flex; align-items:center; justify-content:center; flex-shrink:0;
+  }
+  .branch-top .icon-circle svg{width:20px; height:20px;}
+  .branch-top h3{font-size:16px; font-weight:800;}
+  .branch-top span{font-size:12px; color:var(--gold-soft);}
+  .branch-body{padding:20px 22px; display:flex; flex-direction:column; gap:10px; flex:1;}
+  .branch-row{display:flex; align-items:center; gap:8px; font-size:13.5px; color:var(--muted);}
+  .branch-row svg{width:16px; height:16px; color:var(--navy); flex-shrink:0;}
+  .branch-actions{display:flex; gap:8px; margin-top:12px;}
+
+  /* ===== Certifications ===== */
+  .cert-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:22px;}
+  .cert-card{
+    background:var(--card); border:1px solid var(--line); border-radius:6px;
+    padding:28px 20px; text-align:center;
+  }
+  .cert-card .icon-circle{
+    width:58px; height:58px; border-radius:50%; margin:0 auto 16px;
+    background:linear-gradient(135deg, var(--gold-soft), var(--gold));
+    display:flex; align-items:center; justify-content:center;
+  }
+  .cert-card .icon-circle svg{width:28px; height:28px; color:var(--navy-dark);}
+  .cert-card h3{font-size:14.5px; font-weight:800; color:var(--navy); margin-bottom:6px;}
+  .cert-card p{font-size:12.5px; color:var(--muted);}
+
+  /* ===== About ===== */
+  .about-grid{display:grid; grid-template-columns:1fr 1fr; gap:44px; align-items:center;}
+  .about-visual{
+    background:linear-gradient(160deg, var(--navy), var(--navy-dark));
+    border-radius:6px; padding:44px 30px; text-align:center; color:#fff;
+  }
+  .about-visual .seal{width:110px; height:110px; font-size:24px; margin:0 auto 18px;}
+  .about-visual b{display:block; font-size:15px; letter-spacing:1px;}
+  .about-visual span{font-size:12px; color:var(--gold-soft);}
+  .about-text p{color:var(--muted); margin-bottom:14px; font-size:15px;}
+  .about-list{display:flex; flex-direction:column; gap:12px; margin-top:20px;}
+  .about-list li{display:flex; gap:10px; align-items:flex-start; font-size:14.5px; color:var(--navy-dark);}
+  .about-list svg{flex-shrink:0; width:18px; height:18px; margin-top:2px; color:var(--gold);}
+  @media (max-width:800px){ .about-grid{grid-template-columns:1fr;} }
+
+  /* ===== Contact / Form ===== */
+  .contact-wrap{display:grid; grid-template-columns:1fr 1fr; gap:40px; align-items:start;}
+  .contact-info-card{
+    background:var(--navy); color:#fff; border-radius:6px; padding:34px 28px;
+  }
+  .contact-info-card h3{font-size:19px; font-weight:800; margin-bottom:10px;}
+  .contact-info-card p{font-size:14px; color:#c7d0de; margin-bottom:24px;}
+  .contact-info-row{display:flex; align-items:center; gap:12px; margin-bottom:16px; font-size:14px;}
+  .contact-info-row .icon-circle{
+    width:38px; height:38px; border-radius:50%; background:rgba(255,255,255,0.1);
+    display:flex; align-items:center; justify-content:center; flex-shrink:0;
+  }
+  .contact-info-row .icon-circle svg{width:18px; height:18px; color:var(--gold-soft);}
+  .form-card{
+    background:var(--card); border:1px solid var(--line); border-radius:6px; padding:32px 28px;
+  }
+  .form-group{margin-bottom:16px;}
+  .form-group label{display:block; font-size:13px; font-weight:700; color:var(--navy); margin-bottom:6px;}
+  .form-group input, .form-group select, .form-group textarea{
+    width:100%; padding:12px 14px; border-radius:9px; border:1.5px solid var(--line);
+    font-size:14px; color:var(--navy-dark); background:var(--bg);
+    transition:border-color .2s;
+  }
+  .form-group input:focus, .form-group select:focus, .form-group textarea:focus{
+    outline:none; border-color:var(--gold);
+  }
+  .form-group textarea{resize:vertical; min-height:90px;}
+  .form-submit{width:100%; justify-content:center; padding:14px; font-size:15px;}
+  .form-note{font-size:12px; color:var(--muted); margin-top:12px; text-align:center;}
+  @media (max-width:800px){ .contact-wrap{grid-template-columns:1fr;} }
+
+  /* ===== Footer ===== */
+  footer{background:var(--footer-bg); color:#c7d0de; border-top:2px solid var(--gold);}
+  .footer-brands-row{display:flex; gap:10px; margin-top:16px;}
+  .footer-brands-row .seal{width:44px; height:44px; font-size:10px; padding:6px;}
+  .footer-inner{
+    max-width:1180px; margin:0 auto; padding:56px 20px 24px;
+    display:grid; grid-template-columns:1.3fr 1fr 1fr 1fr; gap:34px;
+  }
+  .footer-col h4{color:#fff; font-size:14.5px; font-weight:800; margin-bottom:16px;}
+  .footer-col p, .footer-col a{font-size:13px; color:#aab4c4; display:block; margin-bottom:10px; line-height:1.7;}
+  .footer-col a:hover{color:var(--gold-soft);}
+  .footer-brand{display:flex; align-items:center; gap:10px; margin-bottom:14px;}
+  .footer-brand b{color:#fff; font-size:15px;}
+  .footer-social{display:flex; gap:10px; margin-top:14px;}
+  .footer-social a{
+    width:36px; height:36px; border-radius:50%; background:rgba(255,255,255,0.06);
+    display:flex; align-items:center; justify-content:center; margin-bottom:0;
+    border:1px solid rgba(255,255,255,0.12);
+  }
+  .footer-social svg{width:16px; height:16px;}
+  .footer-bottom{
+    border-top:1px solid rgba(255,255,255,0.1); text-align:center;
+    padding:20px; font-size:12.5px; color:#8894a6;
+  }
+  @media (max-width:860px){ .footer-inner{grid-template-columns:1fr 1fr;} }
+  @media (max-width:500px){ .footer-inner{grid-template-columns:1fr;} }
+
+  /* ===== Floating WhatsApp button ===== */
+  .float-wa{
+    position:fixed; bottom:22px; left:22px; z-index:70;
+    width:58px; height:58px; border-radius:50%;
+    background:#25D366; color:#fff;
+    display:flex; align-items:center; justify-content:center;
+    box-shadow:0 10px 25px rgba(37,211,102,0.4);
+    transition:transform .2s;
+  }
+  .float-wa:hover{transform:scale(1.08);}
+  .float-wa svg{width:28px; height:28px;}
+
+  /* mobile nav toggle */
+  .mobile-toggle{display:none; width:40px; height:40px; align-items:center; justify-content:center; background:transparent; border:1px solid var(--line); border-radius:8px;}
+  .mobile-toggle svg{width:20px; height:20px; color:var(--navy);}
+  @media (max-width:940px){ .mobile-toggle{display:flex;} }
+  .mobile-menu{
+    display:none; flex-direction:column; gap:2px; background:#fff; border-top:1px solid var(--line);
+    padding:10px 20px 16px;
+  }
+  .mobile-menu.open{display:flex;}
+  .mobile-menu a{padding:12px 4px; font-size:14.5px; font-weight:600; border-bottom:1px solid var(--line);}
+</style>
+</head>
+<body>
+
+  <!-- ============ HEADER ============ -->
+  <div class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="#top">
+        <div class="seal"><img src="images/logo-group.png" alt="مجموعة الغزي لزجاج السيارات"></div>
+        <div class="brand-text">
+          <b data-i18n="brand.name">مجموعة الغزي لزجاج السيارات</b>
+          <span class="en-display" style="letter-spacing:1.5px;" data-i18n="brand.tagline">ALGHUZI AUTO GLASS GROUP</span>
+        </div>
+      </a>
+      <nav class="nav-links">
+        <a href="#companies" data-i18n="nav.companies">شركاتنا</a>
+        <a href="#products" data-i18n="nav.products">منتجاتنا</a>
+        <a href="#services" data-i18n="nav.services">خدماتنا</a>
+        <a href="#branches" data-i18n="nav.branches">فروعنا</a>
+        <a href="#certifications" data-i18n="nav.certifications">شهاداتنا</a>
+        <a href="#about" data-i18n="nav.about">من نحن</a>
+        <a href="#contact" data-i18n="nav.contact">تواصل معنا</a>
+      </nav>
+      <div class="topbar-actions">
+        <div class="lang-switch" id="langSwitch">
+          <button type="button" data-lang="ar" class="lang-btn active">عربي</button>
+          <button type="button" data-lang="en" class="lang-btn">EN</button>
+        </div>
+        <a class="btn btn-wa btn-sm" style="width:auto;" href="#" data-wa-btn data-wa-branch="b2b" data-wa-msg="السلام عليكم، أرغب بالاستفسار عن خدماتكم">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2m0 1.8a8.1 8.1 0 0 1 5.76 2.38 8.07 8.07 0 0 1 2.39 5.73c0 4.48-3.65 8.12-8.15 8.12a8.15 8.15 0 0 1-4.14-1.13l-.3-.17-3.11.82.83-3.03-.19-.31a8.06 8.06 0 0 1-1.25-4.34c0-4.49 3.66-8.12 8.16-8.12M8.5 6.9c-.17 0-.44.06-.67.31s-.88.85-.88 2.08.9 2.42 1.03 2.59c.13.17 1.76 2.8 4.35 3.83 2.15.85 2.59.68 3.06.64.47-.04 1.5-.61 1.71-1.2.21-.6.21-1.1.15-1.21-.06-.11-.24-.17-.5-.3-.26-.13-1.5-.74-1.74-.83-.23-.08-.4-.13-.58.13-.17.26-.66.83-.81 1-.15.17-.3.19-.55.06-.26-.13-1.08-.4-2.05-1.26-.76-.68-1.27-1.51-1.42-1.77-.15-.26-.02-.4.11-.53.12-.12.26-.3.39-.45.13-.15.17-.26.26-.43.09-.17.04-.32-.02-.45-.06-.13-.58-1.44-.8-1.96-.2-.5-.42-.44-.58-.44Z"/></svg>
+          <span data-i18n="btn.whatsapp">واتساب</span>
+        </a>
+        <button class="mobile-toggle" id="mobileToggle" aria-label="القائمة">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+        </button>
+      </div>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#companies" data-i18n="nav.companies">شركاتنا</a>
+      <a href="#products" data-i18n="nav.products">منتجاتنا</a>
+      <a href="#services" data-i18n="nav.services">خدماتنا</a>
+      <a href="#branches" data-i18n="nav.branches">فروعنا</a>
+      <a href="#certifications" data-i18n="nav.certifications">شهاداتنا</a>
+      <a href="#about" data-i18n="nav.about">من نحن</a>
+      <a href="#contact" data-i18n="nav.contact">تواصل معنا</a>
+      <div class="lang-switch" style="margin-top:10px;">
+        <button type="button" data-lang="ar" class="lang-btn active">عربي</button>
+        <button type="button" data-lang="en" class="lang-btn">EN</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="top">
+    <div class="hero-inner">
+      <div class="hero-logos">
+        <div class="hero-logo-group"><img src="images/logo-group.png" alt="مجموعة الغزي لزجاج السيارات"></div>
+        <div class="hero-logo-sub-row">
+          <div class="hero-logo-sub"><img src="images/logo-alghuzi-agt.png" alt="الغزي — AL GHUZI"></div>
+          <div class="hero-logo-sub"><img src="images/logo-starglass-sg.png" alt="ستار جلاس — STAR GLASS"></div>
+          <div class="hero-logo-sub"><img src="images/logo-alamoudi-ama.png" alt="العمودي — ALAMOUDI"></div>
+        </div>
+      </div>
+      <span class="eyebrow" data-i18n="hero.eyebrow">أكثر من ٤٠ عاماً من الخبرة</span>
+      <h1 data-i18n="hero.title">مجموعة الغزي لزجاج السيارات
+        <small class="en-display">ALGHUZI AUTO GLASS GROUP</small>
+      </h1>
+      <p class="lead" data-i18n="hero.lead">موزع معتمد لأكبر مصانع زجاج السيارات في الشرق الأوسط، بمواصفات خاصة وجودة عالية — نخدم الأفراد والشركات الكبرى في الإمارات والسعودية والبحرين، من عميل واحد إلى أسطول كامل.</p>
+      <div class="hero-badges">
+        <span class="badge" data-i18n="hero.badge1">🕘 أكثر من ٤٠ عاماً خبرة</span>
+        <span class="badge" data-i18n="hero.badge2">🏆 موزع معتمد لأكبر المصانع</span>
+        <span class="badge" data-i18n="hero.badge3">🇦🇪 🇸🇦 🇧🇭 الإمارات · السعودية · البحرين</span>
+        <span class="badge" data-i18n="hero.badge4">👤🏢 أفراد وشركات</span>
+      </div>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="#waForm">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11H4l1.5-8h13L20 11h-5"/><path d="M4 11v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><path d="M9 11v9M15 11v9"/></svg>
+          <span data-i18n="hero.ctaQuote">اطلب عرض سعر</span>
+        </a>
+        <a class="btn btn-outline-light" href="#branches">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span data-i18n="hero.ctaBranch">أقرب فرع لك</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TRUST BAR ============ -->
+  <div class="trust-bar">
+    <div class="trust-inner">
+      <div class="trust-item"><b data-i18n="trust.years.num">+٤٠ عاماً</b><span data-i18n="trust.years.label">خبرة متراكمة</span></div>
+      <div class="trust-item"><b data-i18n="trust.top.num">أكبر المصانع</b><span data-i18n="trust.xyg.label">موزع معتمد رسمياً</span></div>
+      <div class="trust-item"><b data-i18n="trust.countries.num">٣ دول</b><span data-i18n="trust.countries.label">الإمارات · السعودية · البحرين</span></div>
+      <div class="trust-item"><b data-i18n="trust.audience.num">أفراد وشركات</b><span data-i18n="trust.audience.label">تجزئة، جملة، وعقود صيانة</span></div>
+    </div>
+  </div>
+
+  <!-- ============ OUR COMPANIES ============ -->
+  <section class="section" id="companies">
+    <div class="section-head">
+      <p class="eyebrow" data-i18n="comp.eyebrow">هيكل المجموعة</p>
+      <h2 data-i18n="comp.title">شركاتنا</h2>
+      <p class="sub" data-i18n="comp.sub">مجموعتنا تضم ثلاث علامات تجارية تحت مظلة واحدة، وكل علامة تحتفظ باسمها وشعارها الخاص</p>
+    </div>
+    <div class="companies-grid">
+      <div class="company-card">
+        <div class="seal"><img src="images/logo-alghuzi-agt.png" alt="الغزي — AL GHUZI"></div>
+        <h3 data-i18n="comp.agt.name">الغزي لزجاج السيارات — AL GHUZI</h3>
+        <div class="country" data-i18n="comp.agt.country">الإمارات · الشارقة (المقر الرئيسي)</div>
+        <p data-i18n="comp.agt.desc">العلامة الرائدة للمجموعة في الإمارات — الغزي لتجارة وتركيب زجاج السيارات ذ.م.م.ش.ش.و.</p>
+      </div>
+      <div class="company-card">
+        <div class="seal"><img src="images/logo-starglass-sg.png" alt="ستار جلاس — STAR GLASS"></div>
+        <h3 data-i18n="comp.sg.name">ستار جلاس — STAR GLASS</h3>
+        <div class="country" data-i18n="comp.sg.country">السعودية (رئيسي) · الرياض، جدة، الدمام</div>
+        <p data-i18n="comp.sg.desc">شركة ستار جلاس لخدمات السيارات، تخدم كبرى العقود التجارية والصناعية بالمملكة.</p>
+      </div>
+      <div class="company-card">
+        <div class="seal"><img src="images/logo-starglass-sg.png" alt="ستار جلاس — STAR GLASS"></div>
+        <h3 data-i18n="comp.sg.name">ستار جلاس — STAR GLASS</h3>
+        <div class="country" data-i18n="comp.sgbh.country">البحرين · المنامة (فرع)</div>
+        <p data-i18n="comp.sgbh.desc">نفس الاسم والشعار المعتمد بالسعودية، بحضور مباشر في مملكة البحرين.</p>
+      </div>
+      <div class="company-card">
+        <div class="seal"><img src="images/logo-alamoudi-ama.png" alt="العمودي — ALAMOUDI"></div>
+        <h3 data-i18n="comp.ama.name">العمودي لزجاج السيارات — ALAMOUDI</h3>
+        <div class="country" data-i18n="comp.ama.country">السعودية · علامة مستقلة</div>
+        <p data-i18n="comp.ama.desc">علامة سعودية مستقلة تابعة للمجموعة، تعمل جنباً إلى جنب مع ستار جلاس في المملكة.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PRODUCTS ============ -->
+  <section class="section" id="products" style="background:#fff;">
+    <div class="section-head">
+      <p class="eyebrow" data-i18n="prod.eyebrow">منتجاتنا</p>
+      <h2 data-i18n="prod.title">منتجات عالية الجودة لزجاج السيارات</h2>
+      <p class="sub" data-i18n="prod.sub">إلى جانب زجاج XYG بمواصفاته الخاصة، نوفّر كامل مستلزمات التركيب والصيانة — ونتعامل أيضاً مع مصانع عالمية موثوقة أخرى لتغطية كل احتياجات عملائنا</p>
+    </div>
+    <div class="cards-grid">
+      <div class="feature-card">
+        <div class="icon-circle">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+        </div>
+        <h3 data-i18n="prod.xyg.name">زجاج السيارات</h3>
+        <p data-i18n="prod.xyg.desc">زجاج بمواصفات خاصة لنا وجودة عالية، ولدينا زجاج HUD (الشاشة العارضة الأمامية) وزجاج SOLACO العاكس للحرارة، مع إمكانية طلب مواصفات خاصة حسب احتياج العميل.</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon-circle">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/></svg>
+        </div>
+        <h3 data-i18n="prod.rubber.name">الربل (حشوات الزجاج)</h3>
+        <p data-i18n="prod.rubber.desc">حشوات مطاطية (ربل) متوافقة مع مختلف موديلات السيارات لضمان تركيب محكم وعازل للماء والهواء.</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon-circle">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v4M12 18v4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M2 12h4M18 12h4M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8"/></svg>
+        </div>
+        <h3 data-i18n="prod.silicone.name">السيليكون</h3>
+        <p data-i18n="prod.silicone.desc">مواد سيليكون احترافية مخصصة لتركيب وتثبيت زجاج السيارات بمتانة وثبات طويل الأمد.</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon-circle">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 2v6.5L4.5 19a2 2 0 0 0 1.8 3h11.4a2 2 0 0 0 1.8-3L14 8.5V2"/><path d="M8.5 2h7"/></svg>
+        </div>
+        <h3 data-i18n="prod.chem.name">مواد كيميائية للالتصاق</h3>
+        <p data-i18n="prod.chem.desc">برايمر ومواد كيميائية متخصصة لتقوية التحام السيليكون مع الزجاج وضمان أعلى معايير السلامة.</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon-circle">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+        </div>
+        <h3 data-i18n="prod.heat.name">منتجات تقليل الحرارة</h3>
+        <p data-i18n="prod.heat.desc">حلول متخصصة لتقليل الحرارة الداخلية للمركبة وتحسين الراحة الحرارية داخل السيارة.</p>
+      </div>
+    </div>
+    <div class="note-box" data-i18n="prod.note">
+      🤝 لدينا شراكات مع <b>مصانع عالمية أخرى موثوقة</b> إلى جانب XYG، لضمان توفير كل ما يحتاجه عملاؤنا من أفراد وورش وشركات.
+    </div>
+  </section>
+
+  <!-- ============ SERVICES ============ -->
+  <section class="section" id="services">
+    <div class="section-head">
+      <p class="eyebrow" data-i18n="serv.eyebrow">خدماتنا</p>
+      <h2 data-i18n="serv.title">نخدم الأفراد والشركات</h2>
+    </div>
+    <div class="cards-grid">
+      <div class="feature-card">
+        <div class="icon-circle">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+        </div>
+        <h3 data-i18n="serv.retail.name">البيع بالتجزئة</h3>
+        <p data-i18n="serv.retail.desc">لأصحاب السيارات مباشرة، مع استشارة مجانية لاختيار الزجاج والمواد المناسبة لمركبتك.</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon-circle">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3h18v18H3z"/><path d="M3 9h18M9 21V9"/></svg>
+        </div>
+        <h3 data-i18n="serv.wholesale.name">البيع بالجملة</h3>
+        <p data-i18n="serv.wholesale.desc">لورش ومحلات زجاج السيارات، بأسعار تنافسية وتوريد منتظم يغطي الإمارات والسعودية والبحرين.</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon-circle">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m14.7 6.3 3 3L8 19H5v-3Z"/><path d="m17.7 3.3 3 3"/></svg>
+        </div>
+        <h3 data-i18n="serv.install.name">تركيب احترافي</h3>
+        <p data-i18n="serv.install.desc">فرق تركيب مدرّبة تستخدم أحدث التقنيات ومواد أصلية لضمان تركيب آمن ومتين.</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon-circle">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-11V5l-8-3-8 3v6c0 7 8 11 8 11Z"/><path d="m9 12 2 2 4-4"/></svg>
+        </div>
+        <h3 data-i18n="serv.insurance.name">معتمدون لدى شركات التأمين</h3>
+        <p data-i18n="serv.insurance.desc">معالجة مطالبات التأمين وإصلاحات معتمدة، بالتنسيق المباشر مع شركات التأمين لتسهيل إجراءات عملائنا.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ WARRANTY ============ -->
+  <section class="section" id="warranty" style="background:#fff;">
+    <div class="section-head">
+      <p class="eyebrow" data-i18n="warranty.eyebrow">ضماننا لك</p>
+      <h2 data-i18n="warranty.title">الضمان الذهبي</h2>
+      <p class="sub" data-i18n="warranty.sub">نثق بجودة عملنا ومنتجاتنا، لذلك نقدّم ضماناً شاملاً يغطي التركيب والزجاج</p>
+    </div>
+    <div class="warranty-grid">
+      <div class="warranty-card">
+        <div class="warranty-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-11V5l-8-3-8 3v6c0 7 8 11 8 11Z"/><path d="m9 12 2 2 4-4"/></svg>
+        </div>
+        <span class="warranty-years" data-i18n="warranty.install.years">٣ سنوات</span>
+        <h3 data-i18n="warranty.install.name">ضمان التركيب</h3>
+        <p data-i18n="warranty.install.desc">عزل تام للصوت، عدم تسرب المياه، وتركيب بأعلى معايير الجودة.</p>
+      </div>
+      <div class="warranty-card">
+        <div class="warranty-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8Z"/><circle cx="12" cy="12" r="3"/></svg>
+        </div>
+        <span class="warranty-years" data-i18n="warranty.glass.years">١٠ سنوات</span>
+        <h3 data-i18n="warranty.glass.name">ضمان الزجاج</h3>
+        <p data-i18n="warranty.glass.desc">ضمان على جودة الزجاج ووضوح الرؤية دون أي تشويش طوال مدة الضمان.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ B2B ============ -->
+  <section class="section section-dark">
+    <div class="b2b-grid">
+      <div class="b2b-text">
+        <p class="eyebrow" data-i18n="b2b.eyebrow">حلول الشركات</p>
+        <h2 style="font-size:clamp(22px,4vw,32px); font-weight:800; margin-bottom:16px;" data-i18n="b2b.title">عقود صيانة وتوريد للشركات الكبرى</h2>
+        <p data-i18n="b2b.desc">نقدّم عقود صيانة وتوريد سنوية لأساطيل الشركات، من محطة وقود بمركبة واحدة إلى شركات بآلاف المركبات — بمرونة كاملة في الجدولة والتوريد.</p>
+        <ul class="b2b-list">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> <span data-i18n="b2b.li1">عقود صيانة دورية مجدولة حسب حجم الأسطول</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> <span data-i18n="b2b.li2">توريد مباشر بأسعار تفضيلية للشركات</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> <span data-i18n="b2b.li3">فريق دعم مخصص لحسابات الشركات</span></li>
+        </ul>
+        <div class="cta-row" style="justify-content:flex-start; margin-top:26px;">
+          <a class="btn btn-primary" href="#waForm" data-i18n="b2b.cta">طلب عرض للشركات</a>
+        </div>
+      </div>
+      <div class="b2b-clients">
+        <p class="label" data-i18n="b2b.trustLabel">ثقة كبرى الشركات</p>
+        <div class="client-logos">
+          <div class="client-logo"><img src="images/client-aramco.png" alt="أرامكو السعودية"></div>
+          <div class="client-logo"><img src="images/client-alyamama.png" alt="اليمامة"></div>
+          <div class="client-logo"><img src="images/client-earadat.png" alt="الإيرادات"></div>
+        </div>
+        <p style="font-size:12px; color:#9aa8bc; margin-top:16px;" data-i18n="b2b.caption">من أبرز عملاء عقود الصيانة والتوريد بالمملكة العربية السعودية</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ BRANCHES ============ -->
+  <section class="section" id="branches">
+    <div class="section-head">
+      <p class="eyebrow" data-i18n="br.eyebrow">تواجدنا</p>
+      <h2 data-i18n="br.title">فروعنا</h2>
+      <p class="sub" data-i18n="br.sub">تواصل مباشرة مع أقرب فرع عبر واتساب أو الهاتف</p>
+    </div>
+    <div class="branches-grid">
+
+      <div class="branch-card">
+        <div class="branch-top">
+          <div class="icon-circle"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg></div>
+          <div><h3 data-i18n="br.city.sharjah">الشارقة</h3><span data-i18n="br.subtitle.sharjah">الغزي — الإمارات 🇦🇪</span></div>
+        </div>
+        <div class="branch-body">
+          <div class="branch-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg> <a href="tel:+97165424669" style="color:inherit;"><span data-i18n="lbl.phone">هاتف:</span> <bdi dir="ltr">06 542 4669</bdi></a></div>
+          <div class="branch-row"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2m0 1.8a8.1 8.1 0 0 1 5.76 2.38 8.07 8.07 0 0 1 2.39 5.73c0 4.48-3.65 8.12-8.15 8.12a8.15 8.15 0 0 1-4.14-1.13l-.3-.17-3.11.82.83-3.03-.19-.31a8.06 8.06 0 0 1-1.25-4.34c0-4.49 3.66-8.12 8.16-8.12M8.5 6.9c-.17 0-.44.06-.67.31s-.88.85-.88 2.08.9 2.42 1.03 2.59c.13.17 1.76 2.8 4.35 3.83 2.15.85 2.59.68 3.06.64.47-.04 1.5-.61 1.71-1.2.21-.6.21-1.1.15-1.21-.06-.11-.24-.17-.5-.3-.26-.13-1.5-.74-1.74-.83-.23-.08-.4-.13-.58.13-.17.26-.66.83-.81 1-.15.17-.3.19-.55.06-.26-.13-1.08-.4-2.05-1.26-.76-.68-1.27-1.51-1.42-1.77-.15-.26-.02-.4.11-.53.12-.12.26-.3.39-.45.13-.15.17-.26.26-.43.09-.17.04-.32-.02-.45-.06-.13-.58-1.44-.8-1.96-.2-.5-.42-.44-.58-.44Z"/></svg> <span><span data-i18n="lbl.whatsapp">واتساب:</span> <bdi dir="ltr">058 879 2610</bdi> / <bdi dir="ltr">056 442 0950</bdi></span></div>
+          <div class="branch-actions">
+            <a class="btn btn-wa btn-sm" href="#" data-wa-btn data-wa-branch="sharjah" data-wa-msg="السلام عليكم، أرغب بالاستفسار — فرع الشارقة" data-i18n="br.wa1">واتساب ١</a>
+            <a class="btn btn-wa btn-sm" href="#" data-wa-btn data-wa-branch="sharjah2" data-wa-msg="السلام عليكم، أرغب بالاستفسار — فرع الشارقة" data-i18n="br.wa2">واتساب ٢</a>
+          </div>
+          <div class="branch-actions">
+            <a class="btn btn-outline btn-sm" href="https://www.google.com/maps/search/?api=1&query=Sharjah+UAE" target="_blank" rel="noopener" data-i18n="btn.mapFull">الموقع على الخريطة</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="branch-card">
+        <div class="branch-top">
+          <div class="icon-circle"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg></div>
+          <div><h3 data-i18n="br.city.riyadh">الرياض</h3><span data-i18n="br.subtitle.sgksa">ستار قلاس — السعودية 🇸🇦</span></div>
+        </div>
+        <div class="branch-body">
+          <div class="branch-row"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2m0 1.8a8.1 8.1 0 0 1 5.76 2.38 8.07 8.07 0 0 1 2.39 5.73c0 4.48-3.65 8.12-8.15 8.12a8.15 8.15 0 0 1-4.14-1.13l-.3-.17-3.11.82.83-3.03-.19-.31a8.06 8.06 0 0 1-1.25-4.34c0-4.49 3.66-8.12 8.16-8.12M8.5 6.9c-.17 0-.44.06-.67.31s-.88.85-.88 2.08.9 2.42 1.03 2.59c.13.17 1.76 2.8 4.35 3.83 2.15.85 2.59.68 3.06.64.47-.04 1.5-.61 1.71-1.2.21-.6.21-1.1.15-1.21-.06-.11-.24-.17-.5-.3-.26-.13-1.5-.74-1.74-.83-.23-.08-.4-.13-.58.13-.17.26-.66.83-.81 1-.15.17-.3.19-.55.06-.26-.13-1.08-.4-2.05-1.26-.76-.68-1.27-1.51-1.42-1.77-.15-.26-.02-.4.11-.53.12-.12.26-.3.39-.45.13-.15.17-.26.26-.43.09-.17.04-.32-.02-.45-.06-.13-.58-1.44-.8-1.96-.2-.5-.42-.44-.58-.44Z"/></svg> <span><span data-i18n="lbl.whatsapp">واتساب:</span> <bdi dir="ltr">050 288 8736</bdi></span></div>
+          <div class="branch-actions">
+            <a class="btn btn-wa btn-sm" href="#" data-wa-btn data-wa-branch="riyadh" data-wa-msg="السلام عليكم، أرغب بالاستفسار — فرع الرياض" data-i18n="btn.whatsapp">واتساب</a>
+            <a class="btn btn-outline btn-sm" href="https://www.google.com/maps/search/?api=1&query=Riyadh+Saudi+Arabia" target="_blank" rel="noopener" data-i18n="btn.map">الموقع</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="branch-card">
+        <div class="branch-top">
+          <div class="icon-circle"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg></div>
+          <div><h3 data-i18n="br.city.jeddah">جدة</h3><span data-i18n="br.subtitle.sgksa">ستار قلاس — السعودية 🇸🇦</span></div>
+        </div>
+        <div class="branch-body">
+          <div class="branch-row"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2m0 1.8a8.1 8.1 0 0 1 5.76 2.38 8.07 8.07 0 0 1 2.39 5.73c0 4.48-3.65 8.12-8.15 8.12a8.15 8.15 0 0 1-4.14-1.13l-.3-.17-3.11.82.83-3.03-.19-.31a8.06 8.06 0 0 1-1.25-4.34c0-4.49 3.66-8.12 8.16-8.12M8.5 6.9c-.17 0-.44.06-.67.31s-.88.85-.88 2.08.9 2.42 1.03 2.59c.13.17 1.76 2.8 4.35 3.83 2.15.85 2.59.68 3.06.64.47-.04 1.5-.61 1.71-1.2.21-.6.21-1.1.15-1.21-.06-.11-.24-.17-.5-.3-.26-.13-1.5-.74-1.74-.83-.23-.08-.4-.13-.58.13-.17.26-.66.83-.81 1-.15.17-.3.19-.55.06-.26-.13-1.08-.4-2.05-1.26-.76-.68-1.27-1.51-1.42-1.77-.15-.26-.02-.4.11-.53.12-.12.26-.3.39-.45.13-.15.17-.26.26-.43.09-.17.04-.32-.02-.45-.06-.13-.58-1.44-.8-1.96-.2-.5-.42-.44-.58-.44Z"/></svg> <span><span data-i18n="lbl.whatsapp">واتساب:</span> <bdi dir="ltr">055 282 5122</bdi></span></div>
+          <div class="branch-actions">
+            <a class="btn btn-wa btn-sm" href="#" data-wa-btn data-wa-branch="jeddah" data-wa-msg="السلام عليكم، أرغب بالاستفسار — فرع جدة" data-i18n="btn.whatsapp">واتساب</a>
+            <a class="btn btn-outline btn-sm" href="https://www.google.com/maps/search/?api=1&query=Jeddah+Saudi+Arabia" target="_blank" rel="noopener" data-i18n="btn.map">الموقع</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="branch-card">
+        <div class="branch-top">
+          <div class="icon-circle"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg></div>
+          <div><h3 data-i18n="br.city.dammam">الدمام</h3><span data-i18n="br.subtitle.sgksa">ستار قلاس — السعودية 🇸🇦</span></div>
+        </div>
+        <div class="branch-body">
+          <div class="branch-row"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2m0 1.8a8.1 8.1 0 0 1 5.76 2.38 8.07 8.07 0 0 1 2.39 5.73c0 4.48-3.65 8.12-8.15 8.12a8.15 8.15 0 0 1-4.14-1.13l-.3-.17-3.11.82.83-3.03-.19-.31a8.06 8.06 0 0 1-1.25-4.34c0-4.49 3.66-8.12 8.16-8.12M8.5 6.9c-.17 0-.44.06-.67.31s-.88.85-.88 2.08.9 2.42 1.03 2.59c.13.17 1.76 2.8 4.35 3.83 2.15.85 2.59.68 3.06.64.47-.04 1.5-.61 1.71-1.2.21-.6.21-1.1.15-1.21-.06-.11-.24-.17-.5-.3-.26-.13-1.5-.74-1.74-.83-.23-.08-.4-.13-.58.13-.17.26-.66.83-.81 1-.15.17-.3.19-.55.06-.26-.13-1.08-.4-2.05-1.26-.76-.68-1.27-1.51-1.42-1.77-.15-.26-.02-.4.11-.53.12-.12.26-.3.39-.45.13-.15.17-.26.26-.43.09-.17.04-.32-.02-.45-.06-.13-.58-1.44-.8-1.96-.2-.5-.42-.44-.58-.44Z"/></svg> <span><span data-i18n="lbl.whatsapp">واتساب:</span> <bdi dir="ltr">050 494 1890</bdi></span></div>
+          <div class="branch-actions">
+            <a class="btn btn-wa btn-sm" href="#" data-wa-btn data-wa-branch="dammam" data-wa-msg="السلام عليكم، أرغب بالاستفسار — فرع الدمام" data-i18n="btn.whatsapp">واتساب</a>
+            <a class="btn btn-outline btn-sm" href="https://www.google.com/maps/search/?api=1&query=Dammam+Saudi+Arabia" target="_blank" rel="noopener" data-i18n="btn.map">الموقع</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="branch-card">
+        <div class="branch-top">
+          <div class="icon-circle"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg></div>
+          <div><h3 data-i18n="br.city.manama">المنامة</h3><span data-i18n="br.subtitle.sgbh">ستار قلاس — البحرين 🇧🇭</span></div>
+        </div>
+        <div class="branch-body">
+          <div class="branch-row"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2m0 1.8a8.1 8.1 0 0 1 5.76 2.38 8.07 8.07 0 0 1 2.39 5.73c0 4.48-3.65 8.12-8.15 8.12a8.15 8.15 0 0 1-4.14-1.13l-.3-.17-3.11.82.83-3.03-.19-.31a8.06 8.06 0 0 1-1.25-4.34c0-4.49 3.66-8.12 8.16-8.12M8.5 6.9c-.17 0-.44.06-.67.31s-.88.85-.88 2.08.9 2.42 1.03 2.59c.13.17 1.76 2.8 4.35 3.83 2.15.85 2.59.68 3.06.64.47-.04 1.5-.61 1.71-1.2.21-.6.21-1.1.15-1.21-.06-.11-.24-.17-.5-.3-.26-.13-1.5-.74-1.74-.83-.23-.08-.4-.13-.58.13-.17.26-.66.83-.81 1-.15.17-.3.19-.55.06-.26-.13-1.08-.4-2.05-1.26-.76-.68-1.27-1.51-1.42-1.77-.15-.26-.02-.4.11-.53.12-.12.26-.3.39-.45.13-.15.17-.26.26-.43.09-.17.04-.32-.02-.45-.06-.13-.58-1.44-.8-1.96-.2-.5-.42-.44-.58-.44Z"/></svg> <span><span data-i18n="lbl.whatsapp">واتساب:</span> <bdi dir="ltr">3774 4584</bdi></span></div>
+          <div class="branch-actions">
+            <a class="btn btn-wa btn-sm" href="#" data-wa-btn data-wa-branch="manama" data-wa-msg="السلام عليكم، أرغب بالاستفسار — فرع المنامة" data-i18n="btn.whatsapp">واتساب</a>
+            <a class="btn btn-outline btn-sm" href="https://www.google.com/maps/search/?api=1&query=Manama+Bahrain" target="_blank" rel="noopener" data-i18n="btn.map">الموقع</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============ CERTIFICATIONS ============ -->
+  <section class="section" id="certifications" style="background:#fff;">
+    <div class="section-head">
+      <p class="eyebrow" data-i18n="cert.eyebrow">شهاداتنا وتكريماتنا</p>
+      <h2 data-i18n="cert.title">موزع معتمد وثقة موثّقة</h2>
+      <p class="sub" data-i18n="cert.sub">هذه بطاقات مبدئية — أرسل لنا صور الشهادات والدروع الفخرية الحقيقية لاستبدالها</p>
+    </div>
+    <div class="cert-grid">
+      <div class="cert-card">
+        <div class="icon-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 15a6 6 0 1 0 0-12 6 6 0 0 0 0 12Z"/><path d="M8.5 13.5 7 22l5-3 5 3-1.5-8.5"/></svg></div>
+        <h3 data-i18n="cert.c1.name">شهادة موزع معتمد XYG</h3>
+        <p data-i18n="cert.c1.desc">موزع رسمي معتمد لزجاج XYG الصيني في منطقة الشرق الأوسط</p>
+      </div>
+      <div class="cert-card">
+        <div class="icon-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 2 7l10 5 10-5-10-5Z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
+        <h3 data-i18n="cert.c2.name">درع أرامكو السعودية</h3>
+        <p data-i18n="cert.c2.desc">تكريم شراكة عقود الصيانة والتوريد طويلة الأمد</p>
+      </div>
+      <div class="cert-card">
+        <div class="icon-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 2 7l10 5 10-5-10-5Z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
+        <h3 data-i18n="cert.c3.name">درع شركة اليمامة</h3>
+        <p data-i18n="cert.c3.desc">تكريم تقديراً للتعاون المستمر وجودة الخدمة</p>
+      </div>
+      <div class="cert-card">
+        <div class="icon-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg></div>
+        <h3 data-i18n="cert.c4.name">+٤٠ عاماً من الاعتماد</h3>
+        <p data-i18n="cert.c4.desc">سجل حافل من الثقة والاستمرارية في سوق زجاج السيارات الخليجي</p>
+      </div>
+    </div>
+    <!-- لإضافة الشهادات الحقيقية: استبدلي كل .icon-circle بصورة <img src="images/cert-xyg.jpg"> بنفس الحجم -->
+  </section>
+
+  <!-- ============ ABOUT ============ -->
+  <section class="section" id="about">
+    <div class="about-grid">
+      <div class="about-visual">
+        <div class="seal"><img src="images/logo-group.png" alt="مجموعة الغزي لزجاج السيارات"></div>
+        <b data-i18n="brand.name">مجموعة الغزي لزجاج السيارات</b>
+        <span data-i18n="about.visualCaption">الإمارات · السعودية · البحرين</span>
+      </div>
+      <div class="about-text">
+        <p class="eyebrow" style="color:var(--gold); font-weight:800; font-size:12.5px; letter-spacing:2.5px; margin-bottom:10px;" data-i18n="about.eyebrow">قصتنا</p>
+        <h2 style="font-size:clamp(22px,4vw,32px); font-weight:800; color:var(--navy); margin-bottom:16px;" data-i18n="about.title">من نحن</h2>
+        <p data-i18n="about.p1">مجموعة الغزي لزجاج السيارات مجموعة شركات خليجية عائلية، عاملة في مجال زجاج السيارات منذ أكثر من ٤٠ عاماً، وهي موزع معتمد لأكبر مصانع زجاج السيارات في الشرق الأوسط.</p>
+        <p data-i18n="about.p2">نغطي البيع بالتجزئة والجملة والتركيب الفردي، إضافة إلى عقود الصيانة والتوريد لكبرى الشركات، ومن أبرز عملائنا أرامكو السعودية واليمامة بالمملكة العربية السعودية.</p>
+        <ul class="about-list">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> <span data-i18n="about.li1">أكثر من ٤٠ عاماً من الخبرة في زجاج السيارات بالخليج</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> <span data-i18n="about.li2">موزع معتمد لأكبر مصانع زجاج السيارات في الشرق الأوسط</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> <span data-i18n="about.li3">حضور راسخ في الإمارات، السعودية، والبحرين</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
+  <section class="section" id="contact" style="background:#fff;">
+    <div class="section-head">
+      <p class="eyebrow" data-i18n="contact.eyebrow">تواصل معنا</p>
+      <h2 data-i18n="contact.title">راسلنا وسنتواصل معك فوراً على واتساب</h2>
+      <p class="sub" data-i18n="contact.sub">عبّي النموذج وسيتم تجهيز رسالتك تلقائياً لإرسالها مباشرة على واتساب الفرع المناسب</p>
+    </div>
+    <div class="contact-wrap">
+      <div class="contact-info-card">
+        <h3 data-i18n="contact.infoTitle">بيانات التواصل</h3>
+        <p data-i18n="contact.infoDesc">اختر الفرع الأقرب لك أو تواصل مباشرة مع قسم الشركات لعقود الصيانة والتوريد.</p>
+        <div class="contact-info-row">
+          <div class="icon-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+          <span data-i18n="contact.row1">واتساب فروعنا الخمسة — الإمارات، السعودية، البحرين</span>
+        </div>
+        <div class="contact-info-row">
+          <div class="icon-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg></div>
+          <span>info@alghuzigroup.com</span>
+        </div>
+        <div class="contact-info-row">
+          <div class="icon-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg></div>
+          <span data-i18n="contact.row3">الشارقة، الرياض، جدة، الدمام، المنامة</span>
+        </div>
+        <div class="footer-social" style="margin-top:10px;">
+          <a href="#" title="إنستقرام"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+          <a href="#" title="تيك توك"><svg viewBox="0 0 24 24" fill="#fff"><path d="M16.6 5.82s.51.5 0 0A4.278 4.278 0 0 1 15.54 3h-3.09v12.4a2.59 2.59 0 0 1-2.59 2.5c-1.42 0-2.6-1.16-2.6-2.6 0-1.72 1.66-3.01 3.37-2.48V9.66c-3.45-.46-6.47 2.22-6.47 5.64 0 3.33 2.76 5.7 5.69 5.7 3.14 0 5.69-2.55 5.69-5.7V9.01a7.35 7.35 0 0 0 4.3 1.38V7.3s-1.88.09-3.24-1.48Z"/></svg></a>
+        </div>
+      </div>
+
+      <form class="form-card" id="waForm">
+        <div class="form-group">
+          <label data-i18n="form.name">الاسم</label>
+          <input type="text" id="f-name" placeholder="اسمك الكامل" data-i18n-ph="ph.name" required>
+        </div>
+        <div class="form-group">
+          <label data-i18n="form.phone">رقم الجوال</label>
+          <input type="tel" id="f-phone" placeholder="05xxxxxxxx" required>
+        </div>
+        <div class="form-group">
+          <label data-i18n="form.branch">الفرع / الدولة</label>
+          <select id="f-branch">
+            <option value="sharjah" data-i18n="opt.sharjah">الشارقة — الإمارات</option>
+            <option value="riyadh" data-i18n="opt.riyadh">الرياض — السعودية</option>
+            <option value="jeddah" data-i18n="opt.jeddah">جدة — السعودية</option>
+            <option value="dammam" data-i18n="opt.dammam">الدمام — السعودية</option>
+            <option value="manama" data-i18n="opt.manama">المنامة — البحرين</option>
+            <option value="b2b" data-i18n="opt.b2b">قسم الشركات B2B</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label data-i18n="form.details">تفاصيل طلبك</label>
+          <textarea id="f-message" placeholder="اكتب نوع السيارة، الخدمة المطلوبة، أو أي تفاصيل أخرى..." data-i18n-ph="ph.message"></textarea>
+        </div>
+        <button type="submit" class="btn btn-wa form-submit">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2m0 1.8a8.1 8.1 0 0 1 5.76 2.38 8.07 8.07 0 0 1 2.39 5.73c0 4.48-3.65 8.12-8.15 8.12a8.15 8.15 0 0 1-4.14-1.13l-.3-.17-3.11.82.83-3.03-.19-.31a8.06 8.06 0 0 1-1.25-4.34c0-4.49 3.66-8.12 8.16-8.12M8.5 6.9c-.17 0-.44.06-.67.31s-.88.85-.88 2.08.9 2.42 1.03 2.59c.13.17 1.76 2.8 4.35 3.83 2.15.85 2.59.68 3.06.64.47-.04 1.5-.61 1.71-1.2.21-.6.21-1.1.15-1.21-.06-.11-.24-.17-.5-.3-.26-.13-1.5-.74-1.74-.83-.23-.08-.4-.13-.58.13-.17.26-.66.83-.81 1-.15.17-.3.19-.55.06-.26-.13-1.08-.4-2.05-1.26-.76-.68-1.27-1.51-1.42-1.77-.15-.26-.02-.4.11-.53.12-.12.26-.3.39-.45.13-.15.17-.26.26-.43.09-.17.04-.32-.02-.45-.06-.13-.58-1.44-.8-1.96-.2-.5-.42-.44-.58-.44Z"/></svg>
+          <span data-i18n="form.submit">إرسال عبر واتساب</span>
+        </button>
+        <p class="form-note" data-i18n="form.note">سيتم فتح واتساب مع رسالتك جاهزة لإرسالها مباشرة — بياناتك لا تُخزَّن على الموقع</p>
+      </form>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-col">
+        <div class="footer-brand">
+          <div class="seal"><img src="images/logo-group.png" alt="مجموعة الغزي لزجاج السيارات"></div>
+          <b data-i18n="brand.name">مجموعة الغزي لزجاج السيارات</b>
+        </div>
+        <p data-i18n="footer.desc">موزع معتمد لأكبر مصانع زجاج السيارات في الشرق الأوسط، بخبرة تتجاوز ٤٠ عاماً في خدمة الأفراد والشركات.</p>
+        <div class="footer-brands-row" title="الغزي · ستار جلاس · العمودي">
+          <div class="seal"><img src="images/logo-alghuzi-agt.png" alt="الغزي — AL GHUZI"></div>
+          <div class="seal"><img src="images/logo-starglass-sg.png" alt="ستار جلاس — STAR GLASS"></div>
+          <div class="seal"><img src="images/logo-alamoudi-ama.png" alt="العمودي — ALAMOUDI"></div>
+        </div>
+        <div class="footer-social">
+          <a href="#" title="إنستقرام"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+          <a href="#" title="لينكدإن"><svg viewBox="0 0 24 24" fill="#fff"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-1 1.83-2 3.77-2 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5.4c0-1.3-.02-2.96-1.8-2.96-1.8 0-2.08 1.4-2.08 2.86V21H9z"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.quickLinks">روابط سريعة</h4>
+        <a href="#companies" data-i18n="nav.companies">شركاتنا</a>
+        <a href="#products" data-i18n="nav.products">منتجاتنا</a>
+        <a href="#services" data-i18n="nav.services">خدماتنا</a>
+        <a href="#certifications" data-i18n="nav.certifications">شهاداتنا</a>
+        <a href="#about" data-i18n="nav.about">من نحن</a>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.agtHeading">الغزي — الإمارات</h4>
+        <a href="#" data-wa-btn data-wa-branch="sharjah" data-wa-msg="السلام عليكم" data-i18n="footer.sharjahAddr">الشارقة، منطقة صناعية ٥</a>
+        <a href="mailto:alghuziautoglass@gmail.com"><bdi dir="ltr">alghuziautoglass@gmail.com</bdi></a>
+        <h4 style="margin-top:18px;" data-i18n="footer.sgHeading">ستار جلاس — السعودية والبحرين</h4>
+        <a href="#" data-wa-btn data-wa-branch="riyadh" data-wa-msg="السلام عليكم" data-i18n="footer.sgCities">الرياض · جدة · الدمام</a>
+        <a href="#" data-wa-btn data-wa-branch="manama" data-wa-msg="السلام عليكم" data-i18n="footer.manamaLink">المنامة — البحرين</a>
+        <a href="mailto:info@starglass.sa">info@starglass.sa</a>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.amaHeading">العمودي — السعودية</h4>
+        <a href="mailto:info@alamoudi.sa">info@alamoudi.sa</a>
+        <h4 style="margin-top:18px;" data-i18n="footer.b2bHeading">قسم الشركات B2B</h4>
+        <a href="#" data-wa-btn data-wa-branch="b2b" data-wa-msg="السلام عليكم، أرغب بالاستفسار عن عقود الشركات" data-i18n="footer.b2bWa">تواصل واتساب</a>
+        <a href="mailto:info@alghuzigroup.com">info@alghuzigroup.com</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      © <span id="year"></span> <span data-i18n="footer.copyLine">مجموعة الغزي لزجاج السيارات — <span class="en-display">ALGHUZI AUTO GLASS GROUP</span> — جميع الحقوق محفوظة</span>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp button -->
+  <a class="float-wa" href="#" data-wa-btn data-wa-branch="b2b" data-wa-msg="السلام عليكم، أرغب بالاستفسار" title="تواصل عبر واتساب">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2m0 1.8a8.1 8.1 0 0 1 5.76 2.38 8.07 8.07 0 0 1 2.39 5.73c0 4.48-3.65 8.12-8.15 8.12a8.15 8.15 0 0 1-4.14-1.13l-.3-.17-3.11.82.83-3.03-.19-.31a8.06 8.06 0 0 1-1.25-4.34c0-4.49 3.66-8.12 8.16-8.12M8.5 6.9c-.17 0-.44.06-.67.31s-.88.85-.88 2.08.9 2.42 1.03 2.59c.13.17 1.76 2.8 4.35 3.83 2.15.85 2.59.68 3.06.64.47-.04 1.5-.61 1.71-1.2.21-.6.21-1.1.15-1.21-.06-.11-.24-.17-.5-.3-.26-.13-1.5-.74-1.74-.83-.23-.08-.4-.13-.58.13-.17.26-.66.83-.81 1-.15.17-.3.19-.55.06-.26-.13-1.08-.4-2.05-1.26-.76-.68-1.27-1.51-1.42-1.77-.15-.26-.02-.4.11-.53.12-.12.26-.3.39-.45.13-.15.17-.26.26-.43.09-.17.04-.32-.02-.45-.06-.13-.58-1.44-.8-1.96-.2-.5-.42-.44-.58-.44Z"/></svg>
+  </a>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  /* ============================================================
+     أرقام واتساب — عدّليها هنا فقط بالصيغة الدولية بدون + أو صفر
+     مثال: الإمارات 971501234567 — السعودية 966501234567 — البحرين 97335001234
+     الأرقام الحالية أرقام تجريبية (placeholder) لازم تُستبدل بالأرقام الحقيقية
+     ============================================================ */
+  const WA_NUMBERS = {
+    sharjah: '971588792610',
+    sharjah2:'971564420950',
+    riyadh:  '966502888736',
+    jeddah:  '966552825122',
+    dammam:  '966504941890',
+    manama:  '97337744584',
+    b2b:     '971588792610'
+  };
+
+  function openWhatsApp(branch, message){
+    const number = WA_NUMBERS[branch] || WA_NUMBERS.b2b;
+    const url = 'https://wa.me/' + number + '?text=' + encodeURIComponent(message);
+    window.open(url, '_blank', 'noopener');
+  }
+
+  /* ============================================================
+     ترجمة رسائل الواتساب الجاهزة — تُستخدم فقط عند تفعيل اللغة الإنجليزية
+     ============================================================ */
+  const WA_MSG_EN = {
+    'السلام عليكم، أرغب بالاستفسار عن خدماتكم': 'Hello, I would like to inquire about your services',
+    'السلام عليكم، أرغب بالاستفسار — فرع الشارقة': 'Hello, I would like to inquire — Sharjah branch',
+    'السلام عليكم، أرغب بالاستفسار — فرع الرياض': 'Hello, I would like to inquire — Riyadh branch',
+    'السلام عليكم، أرغب بالاستفسار — فرع جدة': 'Hello, I would like to inquire — Jeddah branch',
+    'السلام عليكم، أرغب بالاستفسار — فرع الدمام': 'Hello, I would like to inquire — Dammam branch',
+    'السلام عليكم، أرغب بالاستفسار — فرع المنامة': 'Hello, I would like to inquire — Manama branch',
+    'السلام عليكم': 'Hello',
+    'السلام عليكم، أرغب بالاستفسار عن عقود الشركات': 'Hello, I would like to inquire about corporate contracts',
+    'السلام عليكم، أرغب بالاستفسار': 'Hello, I would like to inquire'
+  };
+
+  document.querySelectorAll('[data-wa-btn]').forEach(function(el){
+    el.addEventListener('click', function(e){
+      e.preventDefault();
+      const raw = el.dataset.waMsg || 'السلام عليكم';
+      const msg = (currentLang === 'en' && WA_MSG_EN[raw]) ? WA_MSG_EN[raw] : raw;
+      openWhatsApp(el.dataset.waBranch, msg);
+    });
+  });
+
+  const waForm = document.getElementById('waForm');
+  waForm.addEventListener('submit', function(e){
+    e.preventDefault();
+    const name = document.getElementById('f-name').value.trim();
+    const phone = document.getElementById('f-phone').value.trim();
+    const branch = document.getElementById('f-branch').value;
+    const message = document.getElementById('f-message').value.trim();
+
+    if(!name || !phone){
+      alert(currentLang === 'en' ? 'Please fill in your name and mobile number' : 'الرجاء تعبئة الاسم ورقم الجوال');
+      return;
+    }
+
+    const branchNamesAr = {
+      sharjah:'الشارقة', riyadh:'الرياض', jeddah:'جدة',
+      dammam:'الدمام', manama:'المنامة', b2b:'قسم الشركات'
+    };
+    const branchNamesEn = {
+      sharjah:'Sharjah', riyadh:'Riyadh', jeddah:'Jeddah',
+      dammam:'Dammam', manama:'Manama', b2b:'Corporate Department'
+    };
+
+    const fullMessage = currentLang === 'en'
+      ? ('Hello, I have a request from the ALGHUZI AUTO GLASS GROUP website:\n' +
+         'Name: ' + name + '\n' +
+         'Mobile: ' + phone + '\n' +
+         'Branch: ' + (branchNamesEn[branch] || branch) + '\n' +
+         (message ? ('Details: ' + message) : ''))
+      : ('السلام عليكم، معي طلب من موقع مجموعة الغزي لزجاج السيارات:\n' +
+         'الاسم: ' + name + '\n' +
+         'رقم الجوال: ' + phone + '\n' +
+         'الفرع: ' + (branchNamesAr[branch] || branch) + '\n' +
+         (message ? ('التفاصيل: ' + message) : ''));
+
+    openWhatsApp(branch, fullMessage);
+  });
+
+  const mobileToggle = document.getElementById('mobileToggle');
+  const mobileMenu = document.getElementById('mobileMenu');
+  mobileToggle.addEventListener('click', function(){
+    mobileMenu.classList.toggle('open');
+  });
+  mobileMenu.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){ mobileMenu.classList.remove('open'); });
+  });
+
+  /* ============================================================
+     تبديل اللغة (عربي / English)
+     ============================================================ */
+  const I18N_EN = {
+    'brand.name': 'ALGHUZI AUTO GLASS GROUP',
+    'brand.tagline': 'Automotive Glass Specialists — GCC',
+    'nav.companies': 'Our Companies',
+    'nav.products': 'Products',
+    'nav.services': 'Services',
+    'nav.branches': 'Branches',
+    'nav.certifications': 'Certifications',
+    'nav.about': 'About Us',
+    'nav.contact': 'Contact Us',
+    'btn.whatsapp': 'WhatsApp',
+
+    'hero.eyebrow': 'Over 40 Years of Experience',
+    'hero.title': 'ALGHUZI AUTO GLASS GROUP<small class="en-display">GCC\'s Trusted Automotive Glass Partner</small>',
+    'hero.lead': 'Authorized distributor for the largest automotive glass manufacturers in the Middle East, with special specifications and premium quality — serving individuals and major companies across the UAE, Saudi Arabia, and Bahrain, from a single customer to an entire fleet.',
+    'hero.badge1': '🕘 40+ Years of Experience',
+    'hero.badge2': '🏆 Authorized Distributor for Major Manufacturers',
+    'hero.badge3': '🇦🇪 🇸🇦 🇧🇭 UAE · Saudi Arabia · Bahrain',
+    'hero.badge4': '👤🏢 Individuals & Businesses',
+    'hero.ctaQuote': 'Request a Quote',
+    'hero.ctaBranch': 'Find Nearest Branch',
+
+    'trust.years.num': '40+ Years',
+    'trust.years.label': 'Combined Experience',
+    'trust.xyg.label': 'Officially Authorized Distributor',
+    'trust.top.num': 'Top Manufacturers',
+    'trust.countries.num': '3 Countries',
+    'trust.countries.label': 'UAE · Saudi Arabia · Bahrain',
+    'trust.audience.num': 'Individuals & Businesses',
+    'trust.audience.label': 'Retail, Wholesale & Maintenance Contracts',
+
+    'comp.eyebrow': 'Group Structure',
+    'comp.title': 'Our Companies',
+    'comp.sub': 'Our group includes three brands under one umbrella — each retaining its own name and logo',
+    'comp.agt.name': 'Al Ghuzi Auto Glass — AL GHUZI',
+    'comp.agt.country': 'UAE · Sharjah (Head Office)',
+    'comp.agt.desc': 'The group\'s flagship brand in the UAE — Al Ghuzi Auto Glass Trading & Fixing L.L.C.SP.',
+    'comp.sg.name': 'Star Glass — STAR GLASS',
+    'comp.sg.country': 'Saudi Arabia (HQ) · Riyadh, Jeddah, Dammam',
+    'comp.sg.desc': 'Star Glass Auto Services — serving major commercial and industrial contracts across the Kingdom.',
+    'comp.sgbh.country': 'Bahrain · Manama (Branch)',
+    'comp.sgbh.desc': 'Same name and approved logo as in Saudi Arabia, with a direct presence in the Kingdom of Bahrain.',
+    'comp.ama.name': 'Alamoudi Auto Glass — ALAMOUDI',
+    'comp.ama.country': 'Saudi Arabia · Independent Brand',
+    'comp.ama.desc': 'An independent Saudi brand within the group, operating alongside Star Glass in the Kingdom.',
+
+    'prod.eyebrow': 'Our Products',
+    'prod.title': 'Premium Automotive Glass Products',
+    'prod.sub': 'Alongside XYG glass with its special specifications, we supply everything needed for installation and maintenance — and also work with other trusted global manufacturers to cover all our customers\' needs',
+    'prod.xyg.name': 'Automotive Glass',
+    'prod.xyg.desc': 'Glass made to our own special specifications and premium quality, including HUD (Head-Up Display) glass and SOLACO heat-reflective glass, with the option to request custom specifications tailored to your needs.',
+    'prod.rubber.name': 'Rubber Seals & Moldings',
+    'prod.rubber.desc': 'Rubber seals compatible with a wide range of vehicle models, ensuring a tight, weatherproof fit.',
+    'prod.silicone.name': 'Silicone',
+    'prod.silicone.desc': 'Professional-grade silicone for durable, long-lasting automotive glass installation.',
+    'prod.chem.name': 'Adhesion Chemicals',
+    'prod.chem.desc': 'Primers and specialized chemicals that strengthen the bond between silicone and glass, ensuring the highest safety standards.',
+    'prod.heat.name': 'Heat-Reduction Products',
+    'prod.heat.desc': 'Specialized solutions to reduce interior vehicle heat and improve thermal comfort.',
+    'prod.note': '🤝 We partner with <b>other trusted global manufacturers</b> alongside XYG, to cover every need of our individual, workshop, and corporate customers.',
+
+    'serv.eyebrow': 'Our Services',
+    'serv.title': 'Serving Individuals & Businesses',
+    'serv.retail.name': 'Retail Sales',
+    'serv.retail.desc': 'Direct to car owners, with free consultation to choose the right glass and materials for your vehicle.',
+    'serv.wholesale.name': 'Wholesale',
+    'serv.wholesale.desc': 'For workshops and auto glass shops, with competitive prices and regular supply across the UAE, Saudi Arabia, and Bahrain.',
+    'serv.install.name': 'Professional Installation',
+    'serv.install.desc': 'Trained installation teams using the latest techniques and genuine materials for a safe, durable fit.',
+    'serv.insurance.name': 'Insurance-Approved',
+    'serv.insurance.desc': 'Insurance claims processing and approved repairs, coordinated directly with insurers to make the process easier for our customers.',
+
+    'warranty.eyebrow': 'Our Guarantee',
+    'warranty.title': 'The Golden Warranty',
+    'warranty.sub': 'We stand behind the quality of our work and products with a comprehensive warranty covering both installation and glass',
+    'warranty.install.years': '3 Years',
+    'warranty.install.name': 'Installation Warranty',
+    'warranty.install.desc': 'Complete sound insulation, no water leakage, and installation to the highest quality standards.',
+    'warranty.glass.years': '10 Years',
+    'warranty.glass.name': 'Glass Warranty',
+    'warranty.glass.desc': 'Guaranteed glass quality and clear visibility with no distortion for the full warranty period.',
+
+    'b2b.eyebrow': 'Corporate Solutions',
+    'b2b.title': 'Maintenance & Supply Contracts for Major Companies',
+    'b2b.desc': 'We provide annual maintenance and supply contracts for corporate fleets — from a single-vehicle petrol station to companies with thousands of vehicles — with full flexibility in scheduling and supply.',
+    'b2b.li1': 'Scheduled periodic maintenance contracts based on fleet size',
+    'b2b.li2': 'Direct supply at preferential corporate pricing',
+    'b2b.li3': 'Dedicated support team for corporate accounts',
+    'b2b.cta': 'Request a Corporate Quote',
+    'b2b.trustLabel': 'Trusted by Major Companies',
+    'b2b.client1': 'Saudi Aramco',
+    'b2b.client2': 'Al Yamama',
+    'b2b.caption': 'Among our most prominent maintenance and supply contract clients in the Kingdom of Saudi Arabia',
+
+    'br.eyebrow': 'Our Presence',
+    'br.title': 'Our Branches',
+    'br.sub': 'Contact your nearest branch directly via WhatsApp or phone',
+    'br.city.sharjah': 'Sharjah',
+    'br.city.riyadh': 'Riyadh',
+    'br.city.jeddah': 'Jeddah',
+    'br.city.dammam': 'Dammam',
+    'br.city.manama': 'Manama',
+    'br.subtitle.sharjah': 'Al Ghuzi — UAE 🇦🇪',
+    'br.subtitle.sgksa': 'Star Glass — Saudi Arabia 🇸🇦',
+    'br.subtitle.sgbh': 'Star Glass — Bahrain 🇧🇭',
+    'lbl.phone': 'Phone:',
+    'lbl.whatsapp': 'WhatsApp:',
+    'br.wa1': 'WhatsApp 1',
+    'br.wa2': 'WhatsApp 2',
+    'btn.mapFull': 'View on Map',
+    'btn.map': 'Map',
+
+    'cert.eyebrow': 'Certifications & Awards',
+    'cert.title': 'Authorized Distributor, Documented Trust',
+    'cert.sub': 'These are placeholder cards — send us the real certificate and award images to replace them',
+    'cert.c1.name': 'XYG Authorized Distributor Certificate',
+    'cert.c1.desc': 'Officially authorized distributor of XYG Chinese glass in the Middle East region',
+    'cert.c2.name': 'Saudi Aramco Shield',
+    'cert.c2.desc': 'Award honoring a long-standing maintenance and supply partnership',
+    'cert.c3.name': 'Al Yamama Company Shield',
+    'cert.c3.desc': 'Award in recognition of continued cooperation and service quality',
+    'cert.c4.name': '40+ Years of Trust',
+    'cert.c4.desc': 'A strong track record of trust and continuity in the Gulf automotive glass market',
+
+    'about.visualCaption': 'UAE · Saudi Arabia · Bahrain',
+    'about.eyebrow': 'Our Story',
+    'about.title': 'About Us',
+    'about.p1': 'ALGHUZI AUTO GLASS GROUP is a family-owned Gulf group of companies, operating in the automotive glass industry for over 40 years, and an authorized distributor for the largest automotive glass manufacturers in the Middle East.',
+    'about.p2': 'We cover retail, wholesale, and individual installation, in addition to maintenance and supply contracts for major companies — among our most prominent clients are Saudi Aramco and Al Yamama in the Kingdom of Saudi Arabia.',
+    'about.li1': 'Over 40 years of experience in Gulf automotive glass',
+    'about.li2': 'Authorized distributor for the largest automotive glass manufacturers in the Middle East',
+    'about.li3': 'Established presence in the UAE, Saudi Arabia, and Bahrain',
+
+    'contact.eyebrow': 'Contact Us',
+    'contact.title': 'Message Us — We\'ll Reply Instantly on WhatsApp',
+    'contact.sub': 'Fill out the form and your message will be prepared automatically to send directly to the right branch\'s WhatsApp',
+    'contact.infoTitle': 'Contact Information',
+    'contact.infoDesc': 'Choose your nearest branch, or contact our corporate department directly for maintenance and supply contracts.',
+    'contact.row1': 'WhatsApp for our five branches — UAE, Saudi Arabia, Bahrain',
+    'contact.row3': 'Sharjah, Riyadh, Jeddah, Dammam, Manama',
+    'form.name': 'Name',
+    'form.phone': 'Mobile Number',
+    'form.branch': 'Branch / Country',
+    'form.details': 'Request Details',
+    'form.submit': 'Send via WhatsApp',
+    'form.note': 'WhatsApp will open with your message ready to send — your data is not stored on the site',
+    'opt.sharjah': 'Sharjah — UAE',
+    'opt.riyadh': 'Riyadh — Saudi Arabia',
+    'opt.jeddah': 'Jeddah — Saudi Arabia',
+    'opt.dammam': 'Dammam — Saudi Arabia',
+    'opt.manama': 'Manama — Bahrain',
+    'opt.b2b': 'Corporate Department (B2B)',
+    'ph.name': 'Your full name',
+    'ph.message': 'Vehicle type, service needed, or any other details...',
+
+    'footer.desc': 'Authorized distributor for the largest automotive glass manufacturers in the Middle East, with over 40 years of experience serving individuals and businesses.',
+    'footer.quickLinks': 'Quick Links',
+    'footer.agtHeading': 'Al Ghuzi — UAE',
+    'footer.sharjahAddr': 'Sharjah, Industrial Area 5',
+    'footer.sgHeading': 'Star Glass — Saudi Arabia & Bahrain',
+    'footer.sgCities': 'Riyadh · Jeddah · Dammam',
+    'footer.manamaLink': 'Manama — Bahrain',
+    'footer.amaHeading': 'Alamoudi — Saudi Arabia',
+    'footer.b2bHeading': 'Corporate Department (B2B)',
+    'footer.b2bWa': 'Contact via WhatsApp',
+    'footer.copyLine': '<span class="en-display">ALGHUZI AUTO GLASS GROUP</span> — All rights reserved'
+  };
+
+  const TITLE_AR = document.title;
+  const DESC_AR = document.querySelector('meta[name="description"]').getAttribute('content');
+  const TITLE_EN = 'ALGHUZI AUTO GLASS GROUP | Automotive Glass Specialists';
+  const DESC_EN = 'ALGHUZI AUTO GLASS GROUP — Over 40 years of experience, authorized distributor for the largest automotive glass manufacturers in the Middle East. Retail, wholesale, installation, and corporate maintenance contracts across the UAE, Saudi Arabia, and Bahrain.';
+
+  let currentLang = 'ar';
+
+  const i18nEls = document.querySelectorAll('[data-i18n]');
+  const i18nPhEls = document.querySelectorAll('[data-i18n-ph]');
+  i18nEls.forEach(function(el){ el.dataset.i18nAr = el.innerHTML; });
+  i18nPhEls.forEach(function(el){ el.dataset.i18nPhAr = el.getAttribute('placeholder'); });
+
+  function setLang(lang){
+    currentLang = lang;
+    i18nEls.forEach(function(el){
+      const key = el.dataset.i18n;
+      el.innerHTML = (lang === 'en' && I18N_EN[key]) ? I18N_EN[key] : el.dataset.i18nAr;
+    });
+    i18nPhEls.forEach(function(el){
+      const key = el.dataset.i18nPh;
+      el.setAttribute('placeholder', (lang === 'en' && I18N_EN[key]) ? I18N_EN[key] : el.dataset.i18nPhAr);
+    });
+    document.documentElement.lang = lang;
+    document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+    document.title = lang === 'en' ? TITLE_EN : TITLE_AR;
+    document.querySelector('meta[name="description"]').setAttribute('content', lang === 'en' ? DESC_EN : DESC_AR);
+    document.querySelectorAll('.lang-btn').forEach(function(btn){
+      btn.classList.toggle('active', btn.dataset.lang === lang);
+    });
+    try{ localStorage.setItem('alghuzi_lang', lang); }catch(err){}
+  }
+
+  document.querySelectorAll('.lang-btn').forEach(function(btn){
+    btn.addEventListener('click', function(){ setLang(btn.dataset.lang); });
+  });
+
+  let savedLang = 'ar';
+  try{ savedLang = localStorage.getItem('alghuzi_lang') || 'ar'; }catch(err){}
+  if(savedLang === 'en'){ setLang('en'); }
+</script>
+</body>
+</html>
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
