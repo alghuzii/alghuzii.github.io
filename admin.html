@@ -277,28 +277,58 @@
     });
   }
 
-  function fileToBase64(file){
+  const MAX_DIMENSION = 1600;
+  const JPEG_QUALITY = 0.85;
+
+  function resizeImageFile(file, maxDim, jpegQuality){
     return new Promise(function(resolve, reject){
-      const reader = new FileReader();
-      reader.onload = function(){ resolve(reader.result.split(',')[1]); };
-      reader.onerror = reject;
-      reader.readAsDataURL(file);
+      const url = URL.createObjectURL(file);
+      const img = new Image();
+      img.onload = function(){
+        URL.revokeObjectURL(url);
+        let w = img.naturalWidth, h = img.naturalHeight;
+        if(w > maxDim || h > maxDim){
+          if(w >= h){ h = Math.round(h * maxDim / w); w = maxDim; }
+          else{ w = Math.round(w * maxDim / h); h = maxDim; }
+        }
+        const canvas = document.createElement('canvas');
+        canvas.width = w; canvas.height = h;
+        const ctx = canvas.getContext('2d');
+        ctx.drawImage(img, 0, 0, w, h);
+        const keepPng = file.type === 'image/png';
+        const mime = keepPng ? 'image/png' : 'image/jpeg';
+        canvas.toBlob(function(blob){
+          if(!blob){ reject(new Error('تعذّر تصغير الصورة')); return; }
+          const reader = new FileReader();
+          reader.onload = function(){ resolve({b64: reader.result.split(',')[1], size: blob.size}); };
+          reader.onerror = function(){ reject(new Error('تعذّر قراءة الصورة المصغّرة')); };
+          reader.readAsDataURL(blob);
+        }, mime, keepPng ? undefined : jpegQuality);
+      };
+      img.onerror = function(){ URL.revokeObjectURL(url); reject(new Error('تعذّر فتح الصورة')); };
+      img.src = url;
     });
+  }
+
+  function formatBytes(n){
+    if(n > 1024*1024) return (n/1024/1024).toFixed(1) + 'MB';
+    return Math.round(n/1024) + 'KB';
   }
 
   async function uploadImage(input, key){
     const file = input.files[0];
     if(!file) return;
-    showStatus('جاري رفع ' + key + '...', 'busy');
+    showStatus('جاري تجهيز ورفع ' + key + '...', 'busy');
     try{
-      const b64 = await fileToBase64(file);
+      const originalSize = file.size;
+      const resized = await resizeImageFile(file, MAX_DIMENSION, JPEG_QUALITY);
       let sha = null;
       try{
         const existing = await ghGetFile('images/' + key);
         sha = existing.sha;
       }catch(e){ /* file may not exist yet */ }
-      await ghPutFile('images/' + key, b64, sha, 'Update ' + key + ' via admin panel');
-      showStatus('تم رفع ' + key + ' بنجاح ✓', 'ok');
+      await ghPutFile('images/' + key, resized.b64, sha, 'Update ' + key + ' via admin panel');
+      showStatus('تم رفع ' + key + ' بنجاح ✓ (' + formatBytes(originalSize) + ' → ' + formatBytes(resized.size) + ')', 'ok');
       setTimeout(function(){ renderImagesList(); }, 500);
     }catch(err){
       showStatus('فشل رفع الصورة: ' + err.message, 'err');
