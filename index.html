@@ -287,23 +287,29 @@
   .branch-row svg{width:16px; height:16px; color:var(--navy); flex-shrink:0;}
   .branch-actions{display:flex; gap:8px; margin-top:12px;}
 
-  /* ===== Certifications ===== */
-  .cert-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:22px;}
-  .cert-card{
-    background:var(--card); border:1px solid var(--line); border-radius:6px;
-    padding:28px 20px; text-align:center;
+  /* ===== Certifications (auto-scrolling marquee) ===== */
+  .cert-marquee-wrap{
+    overflow:hidden; position:relative; padding:10px 0;
+    -webkit-mask-image:linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+            mask-image:linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
   }
-  .cert-card .icon-circle{
-    width:58px; height:58px; border-radius:50%; margin:0 auto 16px;
-    background:linear-gradient(135deg, var(--gold-soft), var(--gold));
-    display:flex; align-items:center; justify-content:center;
+  .cert-marquee{
+    display:flex; gap:24px; width:max-content;
+    animation:certScroll 28s linear infinite;
   }
-  .cert-card .icon-circle svg{width:28px; height:28px; color:var(--navy-dark);}
-  .cert-card h3{font-size:14.5px; font-weight:800; color:var(--navy); margin-bottom:6px;}
-  .cert-card p{font-size:12.5px; color:var(--muted);}
-  .cert-photo{
-    width:100%; height:150px; object-fit:cover; border-radius:6px;
-    margin-bottom:16px; background:var(--bg); border:1px solid var(--line); display:block;
+  .cert-marquee-wrap:hover .cert-marquee{animation-play-state:paused;}
+  .cert-item{
+    width:220px; height:180px; flex-shrink:0;
+    background:var(--card); border:1px solid var(--line); border-radius:10px;
+    display:flex; align-items:center; justify-content:center; padding:16px;
+  }
+  .cert-item img{max-width:100%; max-height:100%; object-fit:contain;}
+  @keyframes certScroll{
+    from{transform:translateX(0);}
+    to{transform:translateX(-50%);}
+  }
+  @media (max-width:600px){
+    .cert-item{width:170px; height:140px; padding:12px;}
   }
 
   /* ===== About ===== */
@@ -755,29 +761,17 @@
   <section class="section" id="certifications" style="background:#fff;">
     <div class="section-head">
       <p class="eyebrow" data-i18n="cert.eyebrow">شهاداتنا وتكريماتنا</p>
-      <h2 data-i18n="cert.title">موزع معتمد وثقة موثّقة</h2>
-      <p class="sub" data-i18n="cert.sub">هذه بطاقات مبدئية — أرسل لنا صور الشهادات والدروع الفخرية الحقيقية لاستبدالها</p>
+      <h2 data-i18n="cert.title">شهادات اعتماد ودروع فخرية</h2>
+      <p class="sub" data-i18n="cert.sub">شهادات اعتماد ودروع تكريم من موزعينا وشركائنا، تقديراً لثقتهم وثقة عملائنا على مدار سنوات</p>
     </div>
-    <div class="cert-grid">
-      <div class="cert-card">
-        <img class="cert-photo" src="images/cert-xyg.png" alt="شهادة موزع معتمد XYG">
-        <h3 data-i18n="cert.c1.name">شهادة موزع معتمد XYG</h3>
-        <p data-i18n="cert.c1.desc">موزع رسمي معتمد لزجاج XYG الصيني في منطقة الشرق الأوسط</p>
-      </div>
-      <div class="cert-card">
-        <img class="cert-photo" src="images/cert-aramco.png" alt="درع أرامكو السعودية">
-        <h3 data-i18n="cert.c2.name">درع أرامكو السعودية</h3>
-        <p data-i18n="cert.c2.desc">تكريم شراكة عقود الصيانة والتوريد طويلة الأمد</p>
-      </div>
-      <div class="cert-card">
-        <img class="cert-photo" src="images/cert-yamama.png" alt="درع شركة اليمامة">
-        <h3 data-i18n="cert.c3.name">درع شركة اليمامة</h3>
-        <p data-i18n="cert.c3.desc">تكريم تقديراً للتعاون المستمر وجودة الخدمة</p>
-      </div>
-      <div class="cert-card">
-        <img class="cert-photo" src="images/cert-40years.png" alt="+٤٠ عاماً من الاعتماد">
-        <h3 data-i18n="cert.c4.name">+٤٠ عاماً من الاعتماد</h3>
-        <p data-i18n="cert.c4.desc">سجل حافل من الثقة والاستمرارية في سوق زجاج السيارات الخليجي</p>
+    <div class="cert-marquee-wrap">
+      <div class="cert-marquee" id="certMarquee">
+        <div class="cert-item"><img src="images/cert-xyg.png" alt="شهادة اعتماد"></div>
+        <div class="cert-item"><img src="images/cert-aramco.png" alt="درع تكريم"></div>
+        <div class="cert-item"><img src="images/cert-yamama.png" alt="درع تكريم"></div>
+        <div class="cert-item"><img src="images/cert-40years.png" alt="شهادة اعتماد"></div>
+        <div class="cert-item"><img src="images/cert-5.png" alt="شهادة اعتماد"></div>
+        <div class="cert-item"><img src="images/cert-6.png" alt="درع تكريم"></div>
       </div>
     </div>
   </section>
@@ -1014,6 +1008,12 @@
     a.addEventListener('click', function(){ mobileMenu.classList.remove('open'); });
   });
 
+  /* duplicate certification marquee items for a seamless infinite scroll loop */
+  const certMarquee = document.getElementById('certMarquee');
+  if(certMarquee){
+    certMarquee.innerHTML += certMarquee.innerHTML;
+  }
+
   /* ============================================================
      تبديل اللغة (عربي / English)
      ============================================================ */
@@ -1130,16 +1130,8 @@
     'btn.map': 'Map',
 
     'cert.eyebrow': 'Certifications & Awards',
-    'cert.title': 'Authorized Distributor, Documented Trust',
-    'cert.sub': 'These are placeholder cards — send us the real certificate and award images to replace them',
-    'cert.c1.name': 'XYG Authorized Distributor Certificate',
-    'cert.c1.desc': 'Officially authorized distributor of XYG Chinese glass in the Middle East region',
-    'cert.c2.name': 'Saudi Aramco Shield',
-    'cert.c2.desc': 'Award honoring a long-standing maintenance and supply partnership',
-    'cert.c3.name': 'Al Yamama Company Shield',
-    'cert.c3.desc': 'Award in recognition of continued cooperation and service quality',
-    'cert.c4.name': '40+ Years of Trust',
-    'cert.c4.desc': 'A strong track record of trust and continuity in the Gulf automotive glass market',
+    'cert.title': 'Certifications & Honorary Shields',
+    'cert.sub': 'Certifications and honorary shields from our distributors and partners, in recognition of their trust and our customers\' trust over the years',
 
     'about.visualCaption': 'UAE · Saudi Arabia · Bahrain',
     'about.eyebrow': 'Our Story',
